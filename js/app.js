@@ -1,13 +1,22 @@
-$(function(){ 
+$(function(){
 
     console.log("App initialized");
+    
+    var input = $('#input-box');
+    var ul = $('ul');
+    var list = $('#list-container');
 
     $('#submit-button').on('click', function(){
-        var input = $('#input-box');
-        $('#list-container').append('<li> ' + input.val() + ' </li>');
+        list.append('<li> ' + input.val() + ' </li>');
     });
 
-    $('li').on('click', function() {
-        $(this).remove();
+    $(document).on('click', 'li', function() {
+        $(this).toggleClass('clicked');
+        return false;
     });
+
+    $('#remove-button').on('click', function(){
+        ul.find('.clicked').remove();
+    });
+
 });

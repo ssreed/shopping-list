@@ -23,8 +23,9 @@ h3 {
 li {
     list-style: none;
     padding: 3px;
-    margin: 2px;
+    margin: 0 auto;
     border: 1px solid #999;
+    width: 40%;
 }
 
 .main-container {
@@ -39,11 +40,18 @@ li {
     margin: 10px; 
 }
 
-#submit-button {
+#submit-button,
+#remove-button {
     display: inline;
-    height: 35px;
-    width: 100px;
+    /*height: 35px;
+    width: 130px;*/
+    padding: 7px;
+    border-radius: 50%;
     background: #000;
     color: #FFF;
     border: 1px solid #CCC;
+}
+
+.clicked {
+    text-decoration: line-through;
 }
