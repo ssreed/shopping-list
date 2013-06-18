@@ -5,17 +5,32 @@ $(function(){
     var input = $('#input-box');
     var ul = $('ul');
     var list = $('#list-container');
+    var doc = $(document);
+    var submitButton = $('#submit-button');
+    var removeButton = $('#remove-button');
 
-    $('#submit-button').on('click', function(){
+    var appendItem = function(){
         list.append('<li> ' + input.val() + ' </li>');
+    };
+    
+    submitButton.on('click', function(){
+        appendItem();
     });
 
-    $(document).on('click', 'li', function() {
+    input.keypress(function(e){
+        if(e.which === 13)
+        {
+            e.preventDefault();
+            appendItem();
+        }
+    });
+
+    doc.on('click', 'li', function() {
         $(this).toggleClass('clicked');
         return false;
     });
 
-    $('#remove-button').on('click', function(){
+    removeButton.on('click', function(){
         ul.find('.clicked').remove();
     });
 
