@@ -8,13 +8,20 @@ $(function(){
     var doc = $(document);
     var submitButton = $('#submit-button');
     var removeButton = $('#remove-button');
+    var inputArray = [];
 
     var appendItem = function(){
         list.append('<li> ' + input.val() + ' </li>');
+        addToarray(input.val());
+    };
+
+    var addToarray = function(arg) {
+        inputArray.push(arg);
     };
     
     submitButton.on('click', function(){
         appendItem();
+        console.log(inputArray);
     });
 
     input.keypress(function(e){
@@ -22,6 +29,7 @@ $(function(){
         {
             e.preventDefault();
             appendItem();
+            console.log(inputArray);
         }
     });
 
