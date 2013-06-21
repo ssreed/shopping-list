@@ -12,9 +12,7 @@ $(function(){
     var j = 0;
 
     var appendItem = function() {
-        list.append('<li> ' + input.val() + ' </li>'); 
-        //addToarray(input.val());
-        //console.log(inputArray); 
+        list.append('<li> ' + input.val() + ' </li>');
     };
 
     var addToarray = function(arg) {
@@ -36,9 +34,7 @@ $(function(){
     var add2array = function() {
         inputArray = [];
         $('ul li').each(function(){
-            inputArray.push($.trim($(this).text()).replace(/[^\w\s]/gi, '')); 
-            //console.log($.trim($(this).text()));
-            //console.log($.trim($(this).text()).replace(/[^\w\s]/gi, ''));
+            inputArray.push($.trim($(this).text()).replace(/[^\w\s]/gi, ''));
         });
         console.log(inputArray);
     };
@@ -60,26 +56,16 @@ $(function(){
                 appendItem();
                 j++;
                 add2array();
-                // j++;
-                // console.log(j);
-                // for(var i = j; i <= inputArray.length; i++)
-                // {
-                //      list.append('<li id="' + j + '"  > ' + input.val() + ' </li>'); 
-                // }
             }
         }
     });
 
     doc.on('click', 'li', function() {
         $(this).toggleClass('clicked');
-        //console.log(j);
         return false;
     });
 
     removeButton.on('click', function() {
-        //console.log(ul.find('.clicked'));
-        //var index = ul.find('.clicked').id;
-        //inputArray.splice(index, 1);
         ul.find('.clicked').remove();
     });
 
