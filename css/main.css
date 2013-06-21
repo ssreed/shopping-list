@@ -12,13 +12,18 @@ header {
     padding: 5px;
 }
 
+/* target / context = result */
+/*  80px  / 16px  = 5 */
 h1 {
     font-size: 5em;
     margin: 15px;
 }
 
+
+/* 24px / 16px = 1.5 */
 h3 {
-    font-size: 1.5em; 
+    /*font-size: 1.5em; */
+    font-size: 1.5em;
 }
 
 li {
@@ -32,7 +37,8 @@ li {
 .main-container {
     margin: 0 auto;
     text-align: center;
-    width: 50%;
+    width: 90%;
+    max-width: 1000px;
 }
 
 #input-box { 
